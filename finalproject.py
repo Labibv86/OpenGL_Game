@@ -209,7 +209,7 @@ def showScreen():
 def main():
     glutInit()
     glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB | GLUT_DEPTH)  # Double buffering, RGB color, depth test
-    glutInitWindowSize(1000, 800)  # Window size
+    glutInitWindowSize(1280, 720)
     glutInitWindowPosition(0, 0)  # Window position
     wind = glutCreateWindow(b"3D OpenGL Intro")  # Create the window
 
