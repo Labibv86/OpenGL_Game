@@ -195,31 +195,30 @@ def showScreen():
     glVertex3f(0, GRID_LENGTH, 0)
     glEnd()
 
-    # Display game info text at a fixed screen position
     draw_text(10, 770, f"A Random Fixed Position Text")
     draw_text(10, 740, f"See how the position and variable change?: {rand_var}")
 
     draw_shapes()
 
-    # Swap buffers for smooth rendering (double buffering)
     glutSwapBuffers()
 
 
 # Main function to set up OpenGL window and loop
+# Main function to set up OpenGL window and loop
 def main():
     glutInit()
-    glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB | GLUT_DEPTH)  # Double buffering, RGB color, depth test
+    glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB | GLUT_DEPTH)
     glutInitWindowSize(1280, 720)
-    glutInitWindowPosition(0, 0)  # Window position
-    wind = glutCreateWindow(b"3D OpenGL Intro")  # Create the window
+    glutInitWindowPosition(100, 100)
+    wind = glutCreateWindow(b"3D OpenGL Intro")
 
-    glutDisplayFunc(showScreen)  # Register display function
-    glutKeyboardFunc(keyboardListener)  # Register keyboard listener
+    glutDisplayFunc(showScreen)
+    glutKeyboardFunc(keyboardListener)
     glutSpecialFunc(specialKeyListener)
     glutMouseFunc(mouseListener)
-    glutIdleFunc(idle)  # Register the idle function to move the bullet automatically
+    glutIdleFunc(idle)
 
-    glutMainLoop()  # Enter the GLUT main loop
+    glutMainLoop()
 
 if __name__ == "__main__":
     main()
